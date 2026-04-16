@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparisons and Type Coercion</title>
+    <script src="JS/main.js"></script>
+</head>
+<body>
+
+ <h1>Project 5: comparisons_type_coercion</h1>
+
+    <p id="Not" onclick="not_Function()">Click here</p>
+    </body>
+</html>
+
+//main.js
+
+// 1. Using typeof to display the data type of a variable
+document.write(typeof "Hello World");
+document.write("<br>");
+
+// 2. Type Coercion: combining a string and a number
+// This will result in "105" as JavaScript treats the 5 as text
+document.write("10" + 5);
+document.write("<br>");
+
+// 3. Double Equal (==) Comparison
+// Returns true because the values are the same
+document.write(10 == 10);
+document.write("<br>");
+
+// 4. Triple Equal (===) Comparison
+// Returns false because the data types are different (string vs number)
+document.write("10" === 10);
+document.write("<br>");
+
+// 5. Greater Than (>) and Less Than (<) Operators
+document.write(5 > 2); // true
+document.write("<br>");
+document.write(5 < 2); // false
+document.write("<br>");
+
+// 6. Logical AND (&&) Operator
+// Returns true because both statements are true
+document.write(10 > 5 && 11 > 6);
+document.write("<br>");
+
+// 7. Logical OR (||) Operator
+// Returns true because at least one statement is true
+document.write(5 > 10 || 10 > 4);
+document.write("<br>");
+
+// 8. Logical NOT (!) Operator
+// Returns true because 5 is NOT greater than 10
+document.write(!(5 > 10));
