@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Operations Extravaganza</title>
+    <script src="JS/main.js"></script>
+</head>
+<body>
+
+    <h1>JavaScript Math Operations</h1>
+
+    <p id="Add" onclick="addition_Function()">Click for Addition (2 + 2)</p>
+
+    <p id="Subtract" onclick="subtraction_Function()">Click for Subtraction (10 - 5)</p>
+
+    <p id="Multiply" onclick="multiplication_Function()">Click for Multiplication (6 * 8)</p>
+
+    <p id="Divide" onclick="division_Function()">Click for Division (20 / 4)</p>
+
+    <p id="Mod" onclick="modulus_Function()">Click for the Remainder (25 % 6)</p>
+
+    <p id="Next" onclick="increment_Function()">Click to Increment 5</p>
+
+    <p id="Prev" onclick="decrement_Function()">Click to Decrement 10</p>
+
+    <p id="Ran" onclick="random_Function()">Click for a Random Number (0-100)</p>
+
+</body>
+</html>
+
+//main.js
+
+function addition_Function() {
+    var result = 2 + 2;
+    document.getElementById("Add").innerHTML = "2 + 2 = " + result;
+}
+
+// Subtraction Function
+function subtraction_Function() {
+    var result = 10 - 5;
+    document.getElementById("Subtract").innerHTML = "10 - 5 = " + result;
+}
+
+// Multiplication Function
+function multiplication_Function() {
+    var result = 6 * 8;
+    document.getElementById("Multiply").innerHTML = "6 * 8 = " + result;
+}
+
+// Division Function
+function division_Function() {
+    var result = 20 / 4;
+    document.getElementById("Divide").innerHTML = "20 / 4 = " + result;
+}
+
+// Modulus (Remainder) Function
+function modulus_Function() {
+    var result = 25 % 6; // Finds the remainder of 25 divided by 6
+    document.getElementById("Mod").innerHTML = "When you divide 25 by 6, you have a remainder of: " + result;
+}
+
+// Increment (++) Function
+function increment_Function() {
+    var x = 5;
+    x++; // Increases the value of 5 by 1
+    document.getElementById("Next").innerHTML = "5 incremented is " + x;
+}
+
+// Decrement (--) Function
+function decrement_Function() {
+    var y = 10;
+    y--; // Decreases the value of 10 by 1
+    document.getElementById("Prev").innerHTML = "10 decremented is " + y;
+}
+
+// Random Number Function
+function random_Function() {
+    // Math.random() returns a decimal between 0 and 1. 
+    // Multiplying by 101 gives a range between 0 and 100.
+    var result = Math.random() * 101; 
+    document.getElementById("Ran").innerHTML = "Your random number is: " + result;
+}
