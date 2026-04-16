@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Dictionary Assignment</title>
+    <script src="JS/main.js"></script>
+</head>
+<body>
+
+    <h1>Project 4: Dictionaries and Delete</h1>
+
+    <p id="Dictionary" onclick="my_Dictionary()">Click here to see if the value exists!</p>
+
+</body>
+</html>
+
+//main.js
+
+function my_Dictionary() {
+    // Creating a JavaScript Object (Dictionary) with Key-Value Pairs (KVPs)
+    var Car = {
+        Make: "Dodge",
+        Model: "Viper",
+        Color: "Red",
+        Engine: "V10",
+        Year: 2017
+    };
+
+    // The delete statement removes the "Engine" key from the Car object
+    delete Car.Engine;
+
+    // Attempting to output the "Engine" value to the HTML element
+    // Since it was deleted, the output will display as "undefined"
+    document.getElementById("Dictionary").innerHTML = Car.Engine;
+}
