@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String & Number Methods</title>
+</head>
+<body>
+
+    <h2>JavaScript Method Demonstrations</h2>
+
+    <button onclick="full_sentence()">Click for Concat</button>
+    <p id="Concatenate"></p>
+
+    <button onclick="slice_method()">Click for Slice</button>
+    <p id="Slice"></p>
+
+    <button onclick="string_method()">Click for toString</button>
+    <p id="Numbers_to_string"></p>
+
+    <button onclick="precision_method()">Click for toPrecision</button>
+    <p id="Precision"></p>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+
+//main.js
+
+// Function utilizing the concat() method to join strings
+function full_sentence() {
+    var part_1 = "I have ";
+    var part_2 = "made this ";
+    var part_3 = "into a complete ";
+    var part_4 = "sentence.";
+    var whole_sentence = part_1.concat(part_2, part_3, part_4);
+    document.getElementById("Concatenate").innerHTML = whole_sentence;
+}
+
+// Function utilizing the slice() method to extract a section of a string
+function slice_method() {
+    var sentence = "All work and no play makes Jack a dull boy.";
+    var section = sentence.slice(27, 33); // Extracts "Jack"
+    document.getElementById("Slice").innerHTML = section;
+}
+
+// Function utilizing the toString() method to return a number as a string
+function string_method() {
+    var x = 182;
+    document.getElementById("Numbers_to_string").innerHTML = x.toString();
+}
+
+// Function utilizing the toPrecision() method to format a number to a specified length
+function precision_method() {
+    var x = 12938.3012987376112;
+    document.getElementById("Precision").innerHTML = x.toPrecision(10);
+}
