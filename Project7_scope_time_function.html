@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project 7: Scope, Time, and Debugging</title>
+    <script src="JS/main.js"></script>
+</head>
+<body>
+
+    <h2>Math with Scope</h2>
+    <button onclick="Add_numbers_1()">Add Global</button>
+    <button onclick="Add_numbers_2()">Add Local</button>
+    <button onclick="Add_numbers_error()">Trigger Error (Check Console)</button>
+
+    <hr>
+
+    <h2>Morning Check</h2>
+    <p id="Click_Me" onclick="Morning_Check()">Click here to see if it is still morning.</p>
+
+    <hr>
+
+    <h2>Time of Day</h2>
+    <button onclick="Time_function()">Click here for the time!</button>
+    <p id="Time_of_day"></p>
+
+</body>
+</html>
+
+//main.js
+
+// --- GLOBAL VARIABLE ---
+// Declaring a global variable outside of any functions
+var X = 10;
+
+function Add_numbers_1() {
+    // This function uses the global variable X
+    console.log(20 + X);
+}
+
+function Add_numbers_2() {
+    // --- LOCAL VARIABLE ---
+    // Declaring a local variable inside a function
+    var Y = 20;
+    console.log(Y + 100);
+}
+
+function Add_numbers_error() {
+    // --- INTENTIONAL ERROR ---
+    // Attempting to log variable Y which is local to Add_numbers_2
+    // We use console.log to debug the error in Dev Tools
+    console.log(Y + 50); 
+}
+
+// --- IF STATEMENT ---
+function Morning_Check() {
+    // Using the getHours() method to determine if it is before noon
+    if (new Date().getHours() < 12) {
+        document.getElementById("Click_Me").innerHTML = "It is still morning!";
+    }
+}
+
+// --- TIME_FUNCTION() WITH ELSE IF ---
+function Time_function() {
+    // Retrieving the current hour
+    var Time = new Date().getHours();
+    var Reply;
+
+    // Logic to determine time-of-day greeting
+    if (Time < 12 && Time > 0) {
+        Reply = "It is morning time!";
+    }
+    else if (Time >= 12 && Time < 18) {
+        Reply = "It is afternoon.";
+    }
+    else {
+        Reply = "It is evening time.";
+    }
+    // Displaying the result in the HTML
+    document.getElementById("Time_of_day").innerHTML = Reply;
+}
