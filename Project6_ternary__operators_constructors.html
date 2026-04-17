@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project6_ternary_operators_constructors</title>
+    <script src="JS/main.js"></script>
+</head>
+<body>
+
+    <h2>Voting Eligibility</h2>
+    <p>Enter your age to see if you can vote:</p>
+    <input id="Age" value="18" />
+    <button onclick="Vote_Function()">Check Status</button>
+    <p id="Vote"></p>
+
+    <hr>
+
+    <h2>Voter Information (Constructor)</h2>
+    <button onclick="display_Voter()">Show Voter Details</button>
+    <p id="Voter_Details"></p>
+
+    <hr>
+
+    <h2>Nested Function Counter</h2>
+    <p id="Nested_Function" onclick="count_Function()">Click here to see the nested function result.</p>
+
+</body>
+</html>
+
+//main.js
+
+// --- TERNARY OPERATOR WITH INPUT ---
+function Vote_Function() {
+    var Age, Can_vote;
+    // Get the input value from the browser
+    Age = document.getElementById("Age").value;
+    // Ternary operation: checks if age is 18 or older
+    Can_vote = (Age < 18) ? "You are too young" : "You are old enough";
+    // Display the result in the HTML element
+    document.getElementById("Vote").innerHTML = Can_vote + " to vote.";
+}
+
+// --- CONSTRUCTOR FUNCTION USING "NEW" AND "THIS" ---
+function Voter(Name, Age, Party) {
+    // "this" keyword creates placeholders for the object's properties
+    this.Voter_Name = Name;
+    this.Voter_Age = Age;
+    this.Voter_Party = Party;
+}
+
+// "new" keyword creates unique instances of the Voter object
+var Erik = new Voter("Erik", 19, "Independent");
+var Sarah = new Voter("Sarah", 22, "Democrat");
+
+// Function to display constructor results in the browser
+function display_Voter() {
+    document.getElementById("Voter_Details").innerHTML =
+    Erik.Voter_Name + " is " + Erik.Voter_Age + " years old and registered as an " + Erik.Voter_Party + ".";
+}
+
+// --- NESTED FUNCTION ---
+function count_Function() {
+    // Calls the inner Count() function and displays the return value
+    document.getElementById("Nested_Function").innerHTML = Count();
+    
+    function Count() {
+        var Starting_number = 17; // A voter's age before their birthday
+        // Nested function that increments the number
+        function Plus_one() { Starting_number += 1; }
+        Plus_one();
+        return Starting_number; // Returns 18
+    }
+}
