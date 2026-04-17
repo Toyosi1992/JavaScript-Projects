@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project10_loops_arrays</title>
+    <script src="JS/main.js" defer></script>
+</head>
+<body>
+
+ 
+
+</body>
+/* ##########################################
+   WHILE LOOP FUNCTIONALITY
+   ########################################## */
+function count_To_Ten() {
+    var Digit = "";
+    var x = 1;
+    while (x < 11) {
+        Digit += "<br>" + x;
+        x++; // Increases the counter to avoid infinite loops
+    }
+    document.getElementById("Loop").innerHTML = Digit;
+}
+
+/* ##########################################
+   FOR LOOP FUNCTIONALITY
+   ########################################## */
+var Instruments = ["Guitar", "Drums", "Piano", "Bass", "Violin", "Trumpet", "Flute"];
+var Content = "";
+function for_Loop() {
+    for (var i = 0; i < Instruments.length; i++) {
+        Content += Instruments[i] + "<br>";
+    }
+    document.getElementById("List_of_Instruments").innerHTML = Content;
+}
+
+/* ##########################################
+   ARRAY AND FUNCTIONALITY
+   ########################################## */
+function cat_pics() {
+    var Cat_Picture = [];
+    Cat_Picture[0] = "sleeping";
+    Cat_Picture[1] = "playing";
+    Cat_Picture[2] = "eating";
+    document.getElementById("Array").innerHTML = "The cat is " + Cat_Picture[2] + ".";
+}
+
+/* ##########################################
+   OBJECT USING LET KEYWORD
+   ########################################## */
+function object_Method() {
+    let car = {
+        make: "Dodge ",
+        model: "Viper ",
+        year: "2021 ",
+        color: "red ",
+        description : function() {
+            return "The car is a " + this.year + this.color + this.make + this.model;
+        }
+    };
+    document.getElementById("Car_Object").innerHTML = car.description();
+}
+</html>
