@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Travel | One-Page Site</title>
+    <link rel="stylesheet" href="CSS/one_page_website.css"> 
+</head>
+<body>
+
+    <nav>
+        <a href="#home">Home</a> | 
+        <a href="#gallery">Gallery</a> | 
+        <a href="#video">Watch Video</a> | 
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h1>Explore the Great Outdoors</h1>
+            <p>Welcome to our adventure portal!</p>
+        </section>
+
+        <hr>
+
+        <section id="gallery">
+            <h2>Our Latest Expeditions</h2>
+            <img src="Images/mountain.jpg" alt="Mountain" width="300" onclick="openModal();currentSlide(1)" class="hover-shadow">
+            <img src="Images/forest.jpg" alt="Forest" width="300" onclick="openModal();currentSlide(2)" class="hover-shadow">
+            <img src="Images/lake.jpg" alt="Lake" width="300" onclick="openModal();currentSlide(3)" class="hover-shadow">
+        </section>
+
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+                <div class="mySlides">
+                    <img src="Images/mountain.jpg" alt="Mountain" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="Images/forest.jpg" alt="Forest" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <img src="Images/lake.jpg" alt="Lake" style="width:100%">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+        </div>
+
+        <hr>
+
+        <section id="video">
+            <h2>Experience the Journey</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+        </section>
+
+        <hr>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <form action="#">
+                <label for="fname">First Name:</label><br>
+                <input type="text" id="fname" name="fname" required><br><br>
+                <label for="email">Email Address:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <input type="submit" value="Send Request">
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Adventure Travel Co.</p>
+    </footer>
+
+    <script src="JS/one_page_website.js"></script>
+</body>
+</html>
+
+
+// Function to open the modal
+function openModal() {
+  document.getElementById("myModal").style.display = "block";
+}
+
+// Function to close the modal
+function closeModal() {
+  document.getElementById("myModal").style.display = "none";
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  
+  slides[slideIndex-1].style.display = "block";
+}
