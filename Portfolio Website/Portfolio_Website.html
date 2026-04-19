@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toyosi D. | Senior Business Analyst & Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="Navbar">
+        <a href="#Home" class="active">HOME</a>
+        <a href="#About">ABOUT</a>
+        <a href="#GitHub">PROJECTS</a>
+        <a href="#Contact">CONTACT</a>
+    </nav>
+
+    <header id="Home">
+        <div class="Overlay"></div>
+        <video autoplay muted loop playsinline id="Typing_Video">
+            <source src="images/video/Typing.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <div class="Video_Text">
+            <h1 class="white-text">Toyosi Damilola</h1>
+            <p>Senior Business Analyst | Project Manager | Developer</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="Row" id="About">
+            <div class="Column_2">
+                <img src="images/toyosi_profile.png" alt="Toyosi Profile" class="Profile_Photo">
+            </div>
+            <div class="Column_1">
+                <h1>Professional Profile</h1>
+                <p>With 9 years of experience, I bridge the gap between business needs and technical execution.</p>
+            </div>
+        </section>
+
+        <section class="Row" id="GitHub">
+            <div class="Column_1">
+                <h1>Technical Portfolio</h1>
+                <p>Explore my repositories for code samples in JavaScript, C#, and SQL.</p>
+                <a href="https://github.com/Toyosi1992" target="_blank" class="btn">VIEW GITHUB</a>
+            </div>
+            <div class="Column_2">
+                <img src="images/GitHub.png" alt="GitHub Logo" class="hover-zoom">
+            </div>
+        </section>
+
+        <section class="Row" id="Contact">
+            <div class="Column_1">
+                <h1>Get In Touch</h1>
+                <form action="https://formspree.io/f/your-id" method="POST">
+                    <label>Name</label>
+                    <input type="text" name="name" required>
+                    <label>Email</label>
+                    <input type="email" name="email" required>
+                    <label>Message</label>
+                    <textarea name="message" rows="5"></textarea>
+                    <input type="submit" value="SEND">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Toyosi Damilola | Built with HTML, CSS, & JS</p>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>
